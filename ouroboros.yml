@@ -1,0 +1,27 @@
+#### first create  the folder 
+## mkdir -p /opt/appdata/ouroboros
+## mkdir -p /opt/appdata/ouroboros/hooks
+## chown -cR 1000:1000 /opt/appdata/ouroboros 
+## chmod -cR 755 /opt/appdata/ouroboros 
+version: "3"
+services:
+  ouroboros:
+    container_name: ouroboros
+    image: mrdoob/ouroboros:latest
+    restart: unless-stopped
+    environment:
+      - PUID=100
+      - PGID=100
+      - TZ=Europe/Paris
+      - CLEANUP=true
+      - CLEANUP_UNUSED_VOLUMES=true
+      - INTERVAL=86400
+      - LOG_LEVEL=info
+      - SELF_UPDATE=false
+      - LATEST=true
+      - IGNORE=vpn
+      - SKIP_STARTUP_NOTIFICATIONS=false
+      - NOTIFIERS=discord://Ouroboros@{WEBHOOKID}/{Token}
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /opt/appdata/ouroboros/hooks:/app/pyouroboros/hooks

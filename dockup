@@ -1,0 +1,13 @@
+version: '3.3'
+services:
+    dockupdater:
+        container_name: dockupdater
+        environment:
+            - CLEANUP=true
+            - LOG_LEVEL=info
+            - INTERVAL=720
+            - LABEL=true
+            - WAIT=180
+        volumes:
+            - '/var/run/docker.sock:/var/run/docker.sock'
+        image: dockupdater/dockupdater
