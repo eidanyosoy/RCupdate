@@ -12,7 +12,7 @@ done
 sleep 5
 cd /opt/coreapps/apps/
 
-sudo wget https://raw.githubusercontent.com/doob187/test/master/portainer-ce.yml  && 
+sudo wget https://raw.githubusercontent.com/eidanyosoy/test/master/portainer-ce.yml  && 
 sudo ansible-playbook /opt/coreapps/apps/portainer-ce.yml 
 
 sleep 5
