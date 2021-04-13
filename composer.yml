@@ -17,12 +17,12 @@ services:
     overseerr:
         image: sctx/overseerr
         container_name: overseerr
-        network_mode: sudobox
+        network_mode: plexguide
         environment:
             - PGID=1000
             - PUID=1000
             - LOG_LEVEL=info
-            - TZ=Asia/Tokyo
+            - TZ=America/New_York
         ports:
             - '5055:3000'
         volumes:
@@ -33,9 +33,9 @@ services:
     traktarr:
         container_name: Traktarr
         image: eafxx/traktarr:latest
-        network_mode: sudobox
+        network_mode: plexguide
         environment:
-            - TZ=Europe/London
+            - TZ=America/New_York
             - PUID=1000
             - PGID=1000
             - DELAY=2.5
