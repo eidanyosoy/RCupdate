@@ -7,7 +7,7 @@ version: "3"
 services:
   ouroboros:
     container_name: ouroboros
-    image: mrdoob/ouroboros:latest
+    image: eidanyosoy/ouroboros
     restart: unless-stopped
     environment:
       - PUID=100
