@@ -12,7 +12,7 @@ services:
     environment:
       - PUID=100
       - PGID=100
-      - TZ=Europe/Paris
+      - TZ=America/New_York
       - CLEANUP=true
       - CLEANUP_UNUSED_VOLUMES=true
       - INTERVAL=86400
