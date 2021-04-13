@@ -34,7 +34,7 @@
     - name: 'Deploying {{pgrole}}'
       docker_container:
         name: '{{pgrole}}'
-        image: 'mrdoob/ouroboros:latest'
+        image: 'eidanyosoy/ouroboros'
         pull: yes
         volumes: '{{pg_volumes}}'
         env: '{{pg_env}}'
